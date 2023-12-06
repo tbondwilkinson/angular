@@ -239,6 +239,24 @@ export interface Navigation {
    * for its own `previousNavigation`.
    */
   previousNavigation: Navigation|null;
+
+  /**
+   * Called to indicate a URL should now be committed.
+   * @internal
+   */
+  commitUrl?: () => void;
+
+  /**
+   * Called to indicate a Transition has now finished.
+   * @internal
+   */
+  finish?: () => void;
+
+  /**
+   * Called to indicate a Transition has cancelled.
+   * @internal
+   */
+  cancel?: () => void;
 }
 
 export interface NavigationTransition {
